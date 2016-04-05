@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/UTS/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UTS" targetNamespace="http://www.example.org/UTS/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/UTS/">
+      <xsd:element name="hello">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="helloResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="tambah">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="tambahResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="kurang ">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="kurang Response">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="kurang">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="kurangResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="helloRequest">
+    <wsdl:part element="tns:hello" name="HelloReq"/>
+  </wsdl:message>
+  <wsdl:message name="helloResponse">
+    <wsdl:part element="tns:helloResponse" name="HelloResponse"/>
+  </wsdl:message>
+  <wsdl:message name="tambahRequest">
+  	<wsdl:part name="TambahReq" element="tns:tambahReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="tambahResponse">
+  	<wsdl:part name="TambahResponse" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="kurangRequest">
+  	<wsdl:part name="KurangReq" element="tns:kurangReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="kurangResponse">
+  	<wsdl:part name="KurangResponse" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="UTS">
+    <wsdl:operation name="hello">
+      <wsdl:input message="tns:helloRequest"/>
+      <wsdl:output message="tns:helloResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="tambah">
+    	<wsdl:input message="tns:tambahRequest"></wsdl:input>
+    	<wsdl:output message="tns:tambahResponse"></wsdl:output>
+    </wsdl:operation>    <wsdl:operation name="kurang">    	<wsdl:input message="tns:kurangRequest"></wsdl:input>    	<wsdl:output message="tns:kurangResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UTSSOAP" type="tns:UTS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="hello">
+      <soap:operation soapAction="http://www.example.org/UTS/hello"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UTS">
+    <wsdl:port binding="tns:UTSSOAP" name="UTSSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
