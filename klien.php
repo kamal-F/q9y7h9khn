@@ -10,8 +10,8 @@ $client2 = new SoapClient ( $wsdl, array('cache_wsdl' => WSDL_CACHE_NONE, 'trace
 
 echo '<p>';
 $helloReq = [
-		"nama" => "Budi Suseno",
-		"nim" => "12222"
+		"nama" => "Syarah Fauziatul Ulya",
+		"nim" => "1144075"
 ];
 $helloResponse = $client2->hello($helloReq);
 echo $helloResponse->out;
