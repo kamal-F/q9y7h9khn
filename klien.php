@@ -1,6 +1,6 @@
 <?php
 
-$wsdl="http://localhost/latihan/utswebservice/server/uts.wsdl";
+$wsdl="http://localhost:8080/latihan1/utswebservice/server/uts.wsdl";
 $client2 = new SoapClient ( $wsdl, array('cache_wsdl' => WSDL_CACHE_NONE, 'trace'=>1) );
 
 
@@ -10,8 +10,8 @@ $client2 = new SoapClient ( $wsdl, array('cache_wsdl' => WSDL_CACHE_NONE, 'trace
 
 echo '<p>';
 $helloReq = [
-		"nama" => "Budi Suseno",
-		"nim" => "12222"
+		"nama" => "Nurila Faradila Irfan",
+		"nim" => "1144121"
 ];
 $helloResponse = $client2->hello($helloReq);
 echo $helloResponse->out;
