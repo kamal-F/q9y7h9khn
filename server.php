@@ -6,7 +6,7 @@ class MyWs{
         $nama=$data->nama;
         $nim=$data->nim;
 
-        return ['out' => 'Hello, selamat datang '.$nama.', nim Anda '.$nim];
+        return ['out' => 'Hello, selamat datang '.$nama.' nim anda '.$nim];
     }
 
     function tambah($prmTambah){
